@@ -364,12 +364,14 @@ static void OnRxData(LmHandlerAppData_t *appData, LmHandlerRxParams_t *params)
           AppLedStateOn = appData->Buffer[0] & 0x01;
           if (AppLedStateOn == RESET)
           {
-            APP_LOG(TS_OFF, VLEVEL_H,   "LED OFF\r\n");
+//            APP_LOG(TS_OFF, VLEVEL_H,   "LED OFF\r\n"); // no log print
+            APP_LOG(TS_ON, VLEVEL_M,   "LED OFF\r\n"); // log print in use
             BSP_LED_Off(LED_RED) ;
           }
           else
           {
-            APP_LOG(TS_OFF, VLEVEL_H, "LED ON\r\n");
+//            APP_LOG(TS_OFF, VLEVEL_H, "LED ON\r\n"); // no log print
+            APP_LOG(TS_ON, VLEVEL_M, "LED ON\r\n"); // log print in use
             BSP_LED_On(LED_RED) ;
           }
         }
